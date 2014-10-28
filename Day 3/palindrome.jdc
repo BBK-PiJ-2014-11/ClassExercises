@@ -1,0 +1,24 @@
+
+String invert = new String(); 
+
+println("Enter a line");
+String line = readLine();
+println("");
+int len = line.length();
+
+// for loop take each character of input and creates a inverted (mirror) string
+
+for (int i = 0; i < len; i++){
+	char c = line.charAt(i);
+	//println (c);
+	invert = c + invert;	
+}
+
+//checks if line and invert match
+
+if (line.equals(invert)){
+	println(line+" is a palindrome");
+}else{
+	println(line+" is not a palindrome");
+}
+//println(line+invert);

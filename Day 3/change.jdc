@@ -1,0 +1,27 @@
+double num=0, num1=0, num2=0, total=0, change=0, cost=0, paid=0;
+println("Enter the cost of your purchase");
+String s = System.console().readLine();
+cost = Double.parseDouble(s);
+println("Enter the amount you paid");
+String t = System.console().readLine();
+paid = Double.parseDouble(t);
+change = paid-cost;
+
+//debuging values
+/*
+println("");
+println(cost);
+println("");
+println (paid);
+*/
+
+while(change>0){
+	if (change>50){
+		remainder =  change/50;
+		
+	}
+}
+
+println("");
+println (change);
+

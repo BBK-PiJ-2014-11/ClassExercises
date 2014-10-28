@@ -1,0 +1,17 @@
+String wholeNum = new String();
+println("Alright");
+println("Please enter a number");
+String s = readLine();
+int len = s.length();
+for (int i = 0; i<len; i++){
+	char letter = s.charAt(i);
+	if(letter != ','){
+		wholeNum = wholeNum + letter;
+	}
+}
+
+Float number = Float.parseFloat(wholeNum); 
+double half = number/2;
+
+println();
+println(half);

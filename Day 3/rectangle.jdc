@@ -1,0 +1,35 @@
+//input values for points
+
+
+Point upLeft = new Point();
+println("Enter first x cordinate");
+upLeft.x = readDouble();
+println("Enter first y cordinate");
+upLeft.y = readDouble();
+
+Point downRight = new Point();
+println("Enter second x cordinate");
+downRight.x = readDouble();
+println("Enter second y cordinate");
+downRight.y = readDouble();
+
+//calculate lengths between points 
+
+double width = (Math.abs(downRight.x-upLeft.x));
+double length = (Math.abs(downRight.y-upLeft.y));
+double hypotenuse =  Math.sqrt((Math.pow((downRight.x - upLeft.x),2) + Math.pow((downRight.y - upLeft.y),2)));
+double perimeter = ((length*2)+(width*2));
+double area = (length*width);
+
+
+println("The width was "+width);
+println("The length was "+length);
+println("The perimeter was "+perimeter);
+println("The hypotenuse was "+hypotenuse);
+println("The area was "+area+" squared");
+
+
+class Point{
+	double x;
+	double y;
+}
