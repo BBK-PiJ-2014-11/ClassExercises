@@ -1,0 +1,21 @@
+boolean finish = false;
+boolean up = true;
+println("Enter a number");
+String s = System.console().readLine();
+int num1 = Integer.parseInt(s);
+while(!finish){
+	println("Please enter another number");
+	String t = System.console().readLine();
+	int num2 = Integer.parseInt(t);
+	if(num2 == -1){
+		finish = true;
+	}else if((num2 != num1 +1) && (num2 != num1 -1)){
+		up = false;
+	}
+	num1 = num2;
+}
+if (up == true){
+	println("YES");
+}else{
+	println("NO");
+}
