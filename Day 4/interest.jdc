@@ -1,0 +1,28 @@
+InterestRate interest1 = new InterestRate();
+println("Enter total amount borrowed");
+interest1.total = readDouble();
+println("Enter your interest rate");
+interest1.rate = readDouble();
+println("Enter total years");
+interest1.years = readDouble();
+
+calcualtor(interest1);
+println (output);
+
+String calcualtor(InterestRate ir){
+	output = "";
+	double totalInterest = (rate/100)*total;
+	double totalAmount = (totalInterest + total);
+	output = output +" Total Amount to pay is "+totalAmount;
+	double yearAmount = (totalAmount/years);
+	output = output +" Yearly amount is "+yearAmount;
+	double interestPaid = (totalIntrest/yearAmount);
+	output = output +" Number of years before interest paid is "+interestPaid;
+	return output; //issue with return 
+}
+
+class InterestRate{
+	double total;
+	double rate;
+	double years;
+}
