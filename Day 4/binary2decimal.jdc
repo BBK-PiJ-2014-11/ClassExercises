@@ -1,0 +1,73 @@
+//call menu method
+boolean choice = menuChoice();
+
+//picking up user input
+if(choice){
+	println("Enter a binary number:");
+	String binaryNum = readLine();
+	double binaryAns = Converter.binary2decimal(binaryNum);
+	println("");
+	println ("The decimal conversion is "+binaryAns);
+}else{
+	println("Enter a decimal number:");
+	String decimalString = readLine();
+	int decimalNum = Integer.parseInt(decimalString);
+	String decimalAns = Converter.decimal2binary(decimalNum);
+	println("");
+	println ("The binary conversion is "+decimalAns);
+}
+
+
+//menu method to define which conversion method to use
+boolean menuChoice(){
+	int choice = 0; 
+	while(!(choice == 1 || choice == 2)){
+		println("Binary/Decimal converter: ");
+		println	("If you wish to convert a binary number to a decimal, enter 1 ");
+		println ("If you wish to convert a binary number to a decimal, enter 2.");
+		String choiceString = readLine();
+		choice = Integer.parseInt(choiceString);
+		if (!(choice == 1 || choice == 2)){
+		println("Try again sucker!");
+		}
+	}
+	if (choice == 1){
+		return true;
+	}else{
+		return false;
+	}	
+}		
+
+
+class Converter{
+	
+	//method not returning
+	// included static, now resolved (why?)
+	
+	static double binary2decimal(String s){
+		double decimalConversion = 0;
+		for (int count = 0; count < s.length(); count++){
+			int num = Integer.parseInt(s.substring(count, count+1));
+			if (num == 1){
+				decimalConversion = decimalConversion + (Math.pow(2,(s.length()-1)-count));
+			}
+		}
+		return decimalConversion;
+	}
+	static String decimal2binary(int number){
+		String binaryConversion = "";
+		while (number > 0){
+			if (number%2 == 0){
+				binaryConversion = ("0" + binaryConversion);
+				number = number/2;
+			}else{
+				binaryConversion = ("1" + binaryConversion);
+				number = (number-1)/2;		
+			}	
+		}
+		return binaryConversion;
+	}
+
+}	
+
+
