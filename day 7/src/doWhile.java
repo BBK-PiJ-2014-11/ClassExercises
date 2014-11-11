@@ -3,6 +3,7 @@
  */
 import java.util.Scanner;
 
+
 public class doWhile {
     private static Scanner scanner = new Scanner(System.in);
 
@@ -26,20 +27,31 @@ public class doWhile {
 
     }
 
-    public void grades() {
+    public void grades(int mark) {
         do {
             System.out.println("Input a mark sucker (-1 to exit)");
             mark = scanner.nextInt();
-            if (mark >= 70) {
-                dist++;
-            } else if (mark >= 50) {
-                pass++;
+            if (mark <0 || mark <100) {
+                return;
             } else {
-                fail++;
+                if (mark >= 70) {
+                    dist++;
+                } else if (mark >= 50) {
+                    pass++;
+                } else {
+                    fail++;
+                }
             }
             count ++;
         }while(mark!=-1);
         System.out.println("There are "+count+" students: "+dist+ "distinctions "+pass+fail);
     }
 
+    public static void main(String[] args) {
+        doWhile test = new doWhile(0,0,0,0,0);
+        test.grades(test.mark);
+   }
+
 }
+
+
