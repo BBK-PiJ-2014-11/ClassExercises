@@ -28,23 +28,25 @@ public class doWhile {
     }
 
     public void grades(int mark) {
+        count = -1; // set to -1 to off set exit entry
         do {
             System.out.println("Input a mark sucker (-1 to exit)");
             mark = scanner.nextInt();
-            if (mark <0 || mark <100) {
-                return;
+            if (mark <-1 || mark >100) {
+                System.out.println("Only marks 0-100 are valid");
             } else {
                 if (mark >= 70) {
                     dist++;
                 } else if (mark >= 50) {
                     pass++;
-                } else {
+                } else if (mark >= 0) {
+                    //else if here to avoid counting -1 as valid entry
                     fail++;
                 }
+                count ++;
             }
-            count ++;
         }while(mark!=-1);
-        System.out.println("There are "+count+" students: "+dist+ "distinctions "+pass+fail);
+        System.out.println("There are "+count+" students: "+dist+ " distinctions "+pass+" passes and "+fail+" fails");
     }
 
     public static void main(String[] args) {
