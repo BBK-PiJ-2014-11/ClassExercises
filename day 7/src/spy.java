@@ -8,13 +8,11 @@ public class spy {
 
     private static int spyCount = 0;
     private int id;
-    private String name;
 
 
     public spy(int id){
-        System.out.println("Enter spy id)");
+        System.out.println("Enter spy id: ");
         this.id = scanner.nextInt();
-        //this.id = id;
         spyCount++;
         System.out.println("spy ID: " + this.id);
         System.out.println("spy Name: CONFIDENTIAL");
@@ -38,9 +36,10 @@ public class spy {
         spy spy1= new spy(1);
         spy spy2 = new spy(2);
         spy spy3 = new spy(3);
+        spy1.die();
         spy spy4= new spy(4);
         spy spy5= new spy(5);
-        spy1.die();
+        spy4.die();
     }
 
 }
