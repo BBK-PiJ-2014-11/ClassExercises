@@ -1,5 +1,5 @@
 /**
- * Created by Ehshan on 17/11/2014.
+ * Created by Ehshan
  */
 import java.util.Scanner;
 
@@ -7,28 +7,45 @@ public class person {
 
     private static Scanner scanner = new Scanner(System.in);
 
-    private String firstName;
-    private String lastName;
-    private int age;
+    public String name;
+    public person next;
 
-    public person(String firstName, String lastName, int age ){
-        System.out.println("Enter Person First Name");
-        this.firstName = scanner.nextLine();
-        System.out.println("Enter Person Last Name");
-        this.lastName = scanner.nextLine();
-        System.out.println("Enter Person Age");
-        this.age = scanner.nextInt();
+    public String getName(){
+        return this.name;
     }
 
-    public static void main(String[] args){
+    public person(String name){
+        this.setName(name);
+    }
+
+
+    public void setName(String name){
+       this.name = name;
+    }
+
+
+    public person getNext(){
+        return this.next;
+    }
+
+    public void setNext(person person){
+        this.next = person;
+    }
+
+    /* public void setName(String name){
+        System.out.println("Enter Person Name");
+        this.name = scanner.nextLine();
+    }*/
+
+    /*public static void main(String[] args){
         System.out.println("Create Five People");
         System.out.println("");
-        person person1= new person("one","one",1);
-        // System.out.println(person1.firstName);
-        person person2= new person("two","two",2);
-        person person3= new person("three","three",3);
-        person person4= new person("four","four",4);
-        person person5= new person("five","five",5);
-    }
+        person person1= new person("one");
+        // System.out.println(person1.name);
+        person person2= new person("two");
+        person person3= new person("three");
+        person person4= new person("four");
+        person person5= new person("five");
+    }*/
 
 }
