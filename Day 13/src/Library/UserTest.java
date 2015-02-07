@@ -40,13 +40,4 @@ public class UserTest {
          assertEquals(bateman.getLibrary(), "newLibrary");
     }
 
-    @Test
-    public void testSetID() {
-
-    }
-
-    @Test
-    public void testGetLibrary(){
-
-    }
 }
