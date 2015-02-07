@@ -6,6 +6,7 @@ package Library;
 public class UserImpl implements User {
 
     private String name;
+    private int ID;
     private Library library;
     /**
      * User class constructor
@@ -14,6 +15,7 @@ public class UserImpl implements User {
      */
     public UserImpl(String name) {
         this.name = name;
+        ID = 0;
         library = null;
     }
     /**
@@ -22,7 +24,7 @@ public class UserImpl implements User {
      * @return Name as string
      */
     public String getName() {
-        return name;
+        return this.name;
     }
     /**
      * The Users ID.
@@ -30,20 +32,14 @@ public class UserImpl implements User {
      * @return User ID as string
      */
     public int getID() {
-        return library.getID(name);
+        return this.ID;
     }
     /**
      * Set the user id.
      *
-     * @return true if the ID is correctly assigned, false otherwise (i.e. the username is already used)
      */
-    public boolean setID(Library library) {
-        if (library.checkUserName(name)){
-            return false;
-        } else {
-            library.getID(name);
-            return true;
-        }
+    public void setID(int num) {
+        this.ID = num;
     }
     /**
      * Register user at a library
@@ -52,6 +48,7 @@ public class UserImpl implements User {
      */
     public void register(Library library) {
             this.library = library;
+            this.ID = library.getID(name);
     }
     /**
      * Gets the Library name for this user.

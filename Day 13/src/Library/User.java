@@ -23,10 +23,9 @@ public interface User {
     /**
      * Sets the library-ID of a given user
      *
-     * @param library the Library the user is registering at
-     * @return true if the ID is correctly assigned, false otherwise (i.e. the username is already used)
+     * @param num the number to be assigned
      */
-    public boolean setID(Library library);
+    public void setID(int num);
     /**
      * Registers the user at a library.
      *
