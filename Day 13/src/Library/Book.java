@@ -19,4 +19,14 @@ public interface Book {
      * @return the author's name as a String
      */
     public String getAuthor();
+    /**
+     * Checks is the book has been taken
+     *
+     * @return true if taken false if available
+     */
+    boolean isTaken();
+    /**
+     * Sets the book as taken
+     */
+    void setTaken(boolean taken);
 }

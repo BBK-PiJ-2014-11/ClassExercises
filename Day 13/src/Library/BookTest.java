@@ -30,4 +30,11 @@ public class BookTest {
     public void testGetAuthor(){
         assertEquals(newBook.getAuthor(), "Bret Easton Ellis");
     }
+
+    @Test
+    public void testIsTaken() {
+        assertFalse(newBook.isTaken());
+        newBook.setTaken(true);
+        assertTrue(newBook.isTaken());
+    }
 }
