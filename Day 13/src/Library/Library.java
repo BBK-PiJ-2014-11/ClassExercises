@@ -40,4 +40,22 @@ public interface Library {
      * @param num the number as an integer
      */
     public void setMaxBooksPerUser(int num);
+    /**
+     * The number of users registered in this Library.
+     *
+     * @return number of users registered in Library
+     */
+    int getReaderCount();
+    /**
+     * The number of books in this Library.
+     *
+     * @return number of books in Library
+     */
+    int getBookCount();
+    /**
+     * This number of borrowed books in library.
+     *
+     * @return number of borrowed books in Library
+     */
+    int getBookBorrowedCount();
 }
