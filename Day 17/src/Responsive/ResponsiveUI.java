@@ -23,7 +23,7 @@ public class ResponsiveUI {
     public void run() throws IOException {
         for (int i=0; i<10; i++){
             int time = getInput(i);
-            list.addTask(time);
+            //list.addTask(time);
             Runnable task = new Task(time, i, list);
             Thread t = new Thread(task);
             t.start();
