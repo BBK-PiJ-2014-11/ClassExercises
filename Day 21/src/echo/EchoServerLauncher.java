@@ -3,12 +3,9 @@ package echo;
 /**
  * Created by Ehshan on 09/03/2015.
  */
-import java.rmi.server.*;
 import java.rmi.*;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
-import java.rmi.server.UnicastRemoteObject;
 import java .net.MalformedURLException;
 
 public class EchoServerLauncher {
@@ -16,7 +13,7 @@ public class EchoServerLauncher {
     public static void main(String[] args) {
         // 1. If there is no security manager, start on
         if ( System.getSecurityManager() == null ) {
-            System.setSecurityManager(new RMISecurityManager());
+            System.setSecurityManager(new SecurityManager());
         }
         try {
             // 2. Create the registry if there is not one
